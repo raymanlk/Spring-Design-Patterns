@@ -16,7 +16,6 @@ public class PassengerDto {
     private String lastName;
     private String mobileNo;
     private String nic;
-//    private String email;
-    private Account account;
+    private AccountDto account;
 
 }

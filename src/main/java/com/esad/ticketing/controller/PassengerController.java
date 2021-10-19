@@ -1,6 +1,7 @@
 package com.esad.ticketing.controller;
 
 
+import com.esad.ticketing.dto.PassengerDto;
 import com.esad.ticketing.entity.Passenger;
 import com.esad.ticketing.service.interfaces.PassengerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,8 @@ public class PassengerController {
     private PassengerService passengerService;
 
     @PostMapping("/signup")
-    public ResponseEntity<Passenger> SignUpPassenger(@RequestBody Passenger passenger) {
-        return passengerService.signUpPassenger(passenger);
+    public ResponseEntity<Passenger> SignUpPassenger(@RequestBody PassengerDto passengerDto) {
+        return passengerService.signUpPassenger(passengerDto);
     }
     
 

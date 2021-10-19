@@ -21,8 +21,11 @@ public class PassengerServiceImpl implements PassengerService {
     @Autowired
     private PassengerRepository passengerRepository;
 
+    @Autowired
+    private ModelMapper modelMapper;
+
     @Override
-    public ResponseEntity<Passenger> signUpPassenger(Passenger passenger) {
-        return new ResponseEntity<>(passengerRepository.save(passenger),HttpStatus.CREATED);
+    public ResponseEntity<Passenger> signUpPassenger(PassengerDto passengerDto) {
+        return new ResponseEntity<>(passengerRepository.save(modelMapper.map(passengerDto, Passenger.class)),HttpStatus.CREATED);
     }
 }

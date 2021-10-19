@@ -1,5 +1,6 @@
 package com.esad.ticketing.controller;
 
+import com.esad.ticketing.dto.SmartCardDto;
 import com.esad.ticketing.entity.Passenger;
 import com.esad.ticketing.entity.SmartCard;
 import com.esad.ticketing.service.interfaces.SmartCardService;
@@ -18,7 +19,7 @@ public class SmartCardController {
     private SmartCardService smartCardService;
 
     @PostMapping("/create")
-    public ResponseEntity<SmartCard> create(@RequestBody SmartCard smartCard) {
-        return smartCardService.create(smartCard);
+    public ResponseEntity<SmartCard> create(@RequestBody SmartCardDto smartCardDto) {
+        return smartCardService.create(smartCardDto);
     }
 }

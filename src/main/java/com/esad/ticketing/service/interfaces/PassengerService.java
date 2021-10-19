@@ -5,5 +5,5 @@ import com.esad.ticketing.entity.Passenger;
 import org.springframework.http.ResponseEntity;
 
 public interface PassengerService {
-    public ResponseEntity<Passenger> signUpPassenger(Passenger passenger);
+    public ResponseEntity<Passenger> signUpPassenger(PassengerDto passengerDto);
 }

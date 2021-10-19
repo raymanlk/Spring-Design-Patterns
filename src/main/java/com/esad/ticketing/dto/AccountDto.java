@@ -11,6 +11,4 @@ import lombok.Setter;
 @AllArgsConstructor
 public class AccountDto {
     private String email;
-    private String password;
-    private String type;
 }

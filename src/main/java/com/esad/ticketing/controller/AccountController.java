@@ -1,8 +1,8 @@
 package com.esad.ticketing.controller;
 
 
-import com.esad.ticketing.entity.Ticket;
-import com.esad.ticketing.service.interfaces.TicketService;
+import com.esad.ticketing.entity.Account;
+import com.esad.ticketing.service.interfaces.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/ticket")
-public class TicketController {
+@RequestMapping("/account")
+public class AccountController {
 
     @Autowired
-    private TicketService ticketService;
+    private AccountService accountService;
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Ticket> getAdAcc(@PathVariable Long id) {
-        return ticketService.getTicketById(id);
+    @GetMapping("/login/{email}/{password}/{type}")
+    public ResponseEntity<Boolean> getLoginAccount(@PathVariable String email, @PathVariable String password,@PathVariable String type) {
+        return accountService.LoginAccount(email,password,type);
     }
     
 

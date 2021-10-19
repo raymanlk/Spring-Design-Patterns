@@ -19,16 +19,9 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public ResponseEntity<Boolean> LoginAccount(String email, String password, String type) {
         Optional<Account> account = accountRepository.findById(email);
-
-        System.out.println(password);
         if(account.get().getPassword().equals(password)){
-
-
              return new ResponseEntity<>(true, HttpStatus.OK);
-
         }
-
-        
         return new ResponseEntity<>(false, HttpStatus.OK);
     }
 }

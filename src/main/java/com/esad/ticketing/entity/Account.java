@@ -1,6 +1,7 @@
 package com.esad.ticketing.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,14 +21,17 @@ public class Account {
     private String password;
     private String type;
 
-    @OneToOne(fetch = FetchType.LAZY,
-            cascade =  CascadeType.ALL,
-            mappedBy = "account")
-    private Passenger passenger;
+//    @OneToOne(fetch = FetchType.LAZY,
+//            cascade =  CascadeType.ALL,
+//            mappedBy = "account")
+//    @JsonManagedReference(value="user-movement")
 
-    @OneToOne(fetch = FetchType.LAZY,
-            cascade =  CascadeType.ALL,
-            mappedBy = "account")
-    private Driver driver;
+//    private Passenger passenger;
+
+//    @OneToOne(fetch = FetchType.LAZY,
+//            cascade =  CascadeType.ALL,
+//            mappedBy = "account")
+//    @JsonManagedReference
+//    private Driver driver;
 
 }

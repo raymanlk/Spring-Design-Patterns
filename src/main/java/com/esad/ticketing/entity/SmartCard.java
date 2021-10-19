@@ -1,5 +1,6 @@
 package com.esad.ticketing.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,7 +26,12 @@ public class SmartCard {
     @CreatedDate
     private Date activated;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
+//    @OneToOne(fetch = FetchType.LAZY, optional = false)
+//    @JoinColumn(name = "passenger_id", nullable = false)
+//    private Passenger passenger;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "passenger_id", nullable = false)
+    @JsonBackReference
     private Passenger passenger;
 }

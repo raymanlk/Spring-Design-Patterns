@@ -1,5 +1,8 @@
-package com.esad.ticketing.entity;
+package com.esad.ticketing.dto;
 
+
+import com.esad.ticketing.entity.Route;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,22 +10,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Set;
 
-@Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Route {
-    @Id
+public class TimetableDto {
+    private String dayOfWeek;
+    private String departureTime;
+    private String arrivalTime;
     private String routeId;
-    private String origin;
-    private String destination;
-    private Double amount;
-    @OneToMany(mappedBy="route")
-    private Set<Bus> buses;
-    @OneToMany(mappedBy="route")
-    private Set<TimeTable> timeTables;
+
 }

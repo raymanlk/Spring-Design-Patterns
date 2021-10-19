@@ -1,5 +1,6 @@
 package com.esad.ticketing.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,6 +25,7 @@ public class Reservation {
     private Date resDate;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "passenger_id", nullable = false)
+    @JsonBackReference
     private Passenger passenger;
 
     @OneToMany(mappedBy="reservation")

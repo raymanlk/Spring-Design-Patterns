@@ -1,8 +1,8 @@
 package com.esad.ticketing.controller;
 
-
 import com.esad.ticketing.entity.Passenger;
-import com.esad.ticketing.service.interfaces.PassengerService;
+import com.esad.ticketing.entity.SmartCard;
+import com.esad.ticketing.service.interfaces.SmartCardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,16 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/passenger")
-public class PassengerController {
+@RequestMapping("/smartcard")
+public class SmartCardController {
 
     @Autowired
-    private PassengerService passengerService;
+    private SmartCardService smartCardService;
 
-    @PostMapping("/signup")
-    public ResponseEntity<Passenger> SignUpPassenger(@RequestBody Passenger passenger) {
-        return passengerService.signUpPassenger(passenger);
+    @PostMapping("/create")
+    public ResponseEntity<SmartCard> create(@RequestBody SmartCard smartCard) {
+        return smartCardService.create(smartCard);
     }
-    
-
 }

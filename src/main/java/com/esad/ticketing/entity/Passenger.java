@@ -38,8 +38,8 @@ public class Passenger implements Serializable {
 //    @JsonManagedReference
 //    private SmartCard smartCard;
 
-//    @OneToMany(mappedBy="passenger")
-//    @JsonManagedReference
-//    private Set<Reservation> reservations;
+    @OneToMany(mappedBy="passenger")
+    @JsonManagedReference
+    private Set<SmartCard> smartCards;
 
 }

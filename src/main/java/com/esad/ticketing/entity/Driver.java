@@ -1,5 +1,6 @@
 package com.esad.ticketing.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,7 +25,8 @@ public class Driver {
     private String mobileNo;
     private String nic;
     @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "account_id", nullable = false)
+    @JoinColumn(name = "account", nullable = true)
+    @JsonBackReference
     private Account account;
 
     @OneToMany(mappedBy="driver")
